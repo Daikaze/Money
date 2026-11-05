@@ -1,0 +1,59 @@
+<section class="acm-panel acm-wallet-panel">
+  <p class="acm-intro">Native D&amp;D 5e currency for <strong>{{actorName}}</strong>. Set the amount to add or remove, or exchange coins at the configured rates.</p>
+  <div class="acm-wallet-list">
+    {{#each currencies}}
+    <div class="acm-wallet-row" data-currency-id="{{id}}">
+      <img class="acm-coin-img" src="{{icon}}" alt="" width="32" height="32">
+      <div class="acm-coin-details">
+        <strong>{{name}} <small>({{abbreviation}})</small></strong>
+        <span class="acm-muted">1 {{abbreviation}} = {{valueGP}} GP</span>
+      </div>
+      <div class="acm-balance" title="Current balance">{{balance}}</div>
+      <input class="acm-change-amount" type="number" min="1" step="1" value="1" aria-label="Number of coins">
+      <button type="button" data-action="change" data-operation="add" title="Add coins" class="icon"><i class="fa-solid fa-plus"></i></button>
+      <button type="button" data-action="change" data-operation="remove" title="Remove coins" class="icon"><i class="fa-solid fa-minus"></i></button>
+    </div>
+    {{/each}}
+  </div>
+  <fieldset class="acm-fieldset">
+    <legend>Exchange coins</legend>
+    <div class="acm-transaction-grid">
+      <label>From
+        <select name="acm-exchange-from">
+          {{#each currencies}}<option value="{{id}}">{{name}} ({{abbreviation}})</option>{{/each}}
+        </select>
+      </label>
+      <label>To
+        <select name="acm-exchange-to">
+          {{#each currencies}}<option value="{{id}}">{{name}} ({{abbreviation}})</option>{{/each}}
+        </select>
+      </label>
+      <label>Amount
+        <input name="acm-exchange-quantity" type="number" min="1" step="1" value="1">
+      </label>
+      <button type="button" data-action="exchange"><i class="fa-solid fa-right-left"></i> Exchange</button>
+    </div>
+    <p class="acm-muted">Exchange only completes when the result is a whole number of coins. No fees are charged.</p>
+  </fieldset>
+  {{#if hasTargets}}
+  <fieldset class="acm-fieldset">
+    <legend>Transfer between actors you own</legend>
+    <div class="acm-transaction-grid">
+      <label>Currency
+        <select name="acm-transfer-currency">
+          {{#each currencies}}<option value="{{id}}">{{name}} ({{abbreviation}})</option>{{/each}}
+        </select>
+      </label>
+      <label>To actor
+        <select name="acm-transfer-target">
+          {{#each targets}}<option value="{{id}}">{{name}}</option>{{/each}}
+        </select>
+      </label>
+      <label>Amount
+        <input name="acm-transfer-quantity" type="number" min="1" step="1" value="1">
+      </label>
+      <button type="button" data-action="transfer"><i class="fa-solid fa-arrow-right-arrow-left"></i> Transfer</button>
+    </div>
+  </fieldset>
+  {{/if}}
+</section>

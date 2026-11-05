@@ -1,0 +1,45 @@
+{
+  "id": "averis-currency-manager",
+  "title": "Averis Currency Manager",
+  "description": "GM-defined currencies integrated into D&D 5e's native actor wallets, with icons, exchange rates and transfers. Built for Foundry VTT v14.",
+  "version": "0.1.0",
+  "authors": [
+    {
+      "name": "Tabletop Atlas / Averis"
+    }
+  ],
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "compatibility": {
+          "minimum": "6.0.0",
+          "verified": "6.0.6"
+        }
+      }
+    ]
+  },
+  "esmodules": [
+    "scripts/main.mjs"
+  ],
+  "styles": [
+    "styles/main.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "bg",
+      "name": "Български",
+      "path": "lang/bg.json"
+    }
+  ]
+}

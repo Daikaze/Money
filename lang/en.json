@@ -1,0 +1,8 @@
+{
+  "ACM": {
+    "Settings": "Manage Custom Currencies",
+    "SettingsHint": "Add currencies to native D&D 5e actor sheets. World reload is required after saving.",
+    "Wallet": "Currency Wallet",
+    "Currencies": "Custom Currencies"
+  }
+}

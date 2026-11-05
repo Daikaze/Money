@@ -1,0 +1,52 @@
+/* Scoped to Averis Currency Manager applications. Uses standard Foundry theme variables. */
+.acm-window .window-content {
+  padding: 0;
+  overflow: auto;
+}
+.acm-window .acm-panel {
+  padding: .85rem;
+  font-size: var(--font-size-13, 13px);
+}
+.acm-window .acm-intro { margin: 0 0 .8rem; line-height: 1.45; }
+.acm-window .acm-muted { opacity: .7; font-size: .83em; }
+.acm-window .acm-table-wrap { width: 100%; overflow-x: auto; }
+.acm-window .acm-table { width: 100%; border-collapse: collapse; table-layout: auto; }
+.acm-window .acm-table th { text-align: left; font-size: .85em; opacity: .85; padding: .4rem .2rem; }
+.acm-window .acm-table td { padding: .27rem .2rem; vertical-align: middle; }
+.acm-window .acm-table tbody tr:nth-child(even) { background: var(--color-bg-option, rgba(127,127,127,.06)); }
+.acm-window .acm-table input { width: 100%; min-width: 0; height: 30px; padding: .25rem .35rem; box-sizing: border-box; }
+.acm-window .acm-id-col { min-width: 100px; }
+.acm-window .acm-abr-col { min-width: 60px; }
+.acm-window .acm-value-col { min-width: 88px; }
+.acm-window .acm-button-col { min-width: 34px; }
+.acm-window .acm-icon-col { min-width: 130px; }
+.acm-window .acm-icon-input { display: flex; gap: .3rem; align-items: center; }
+.acm-window .acm-icon-input img { flex: 0 0 24px; object-fit: contain; }
+.acm-window .acm-empty { text-align: center; padding: 2rem .5rem; }
+.acm-window .acm-toolbar { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; margin-top: .7rem; }
+.acm-window .acm-toolbar button { width: auto; flex: 0 0 auto; }
+.acm-window .acm-footer { justify-content: flex-end; border-top: 1px solid var(--color-border-light-2, #7775); padding-top: .7rem; }
+.acm-window .acm-caution { line-height: 1.4; margin: .8rem 0; opacity: .84; }
+.acm-window .acm-wallet-list { display: grid; gap: .3rem; }
+.acm-window .acm-wallet-row {
+  display: grid; grid-template-columns: 34px minmax(110px, 1fr) minmax(40px, auto) 64px 30px 30px;
+  align-items: center; gap: .4rem; padding: .35rem; border-bottom: 1px solid var(--color-border-light-2, #7775);
+}
+.acm-window .acm-coin-img { width: 32px; height: 32px; object-fit: contain; }
+.acm-window .acm-coin-details { display: flex; flex-direction: column; gap: .15rem; }
+.acm-window .acm-coin-details small { font-weight: normal; }
+.acm-window .acm-balance { font-size: 1.05em; text-align: right; font-variant-numeric: tabular-nums; }
+.acm-window .acm-change-amount { text-align: center; min-width: 0; width: 64px; }
+.acm-window button.icon { width: 29px; height: 29px; min-width: 29px; padding: 0; }
+.acm-window .acm-fieldset { border: 1px solid var(--color-border-light-2, #7775); margin: .85rem 0 0; padding: .65rem; border-radius: 4px; }
+.acm-window .acm-fieldset legend { font-weight: 600; padding: 0 .35rem; }
+.acm-window .acm-transaction-grid { display: grid; grid-template-columns: 1fr 1fr 85px auto; gap: .5rem; align-items: end; }
+.acm-window .acm-transaction-grid label { display: grid; gap: .3rem; min-width: 0; font-size: .88em; }
+.acm-window .acm-transaction-grid select, .acm-window .acm-transaction-grid input { width: 100%; min-width: 0; box-sizing: border-box; }
+.acm-window .acm-transaction-grid button { width: auto; min-width: 90px; }
+.acm-window .acm-fieldset .acm-muted { margin: .45rem 0 0; }
+@media (max-width: 560px) {
+  .acm-window .acm-wallet-row { grid-template-columns: 28px minmax(80px, 1fr) 36px 50px 26px 26px; gap: .18rem; }
+  .acm-window .acm-coin-img { width: 25px; height: 25px; }
+  .acm-window .acm-transaction-grid { grid-template-columns: 1fr 1fr; }
+}

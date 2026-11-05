@@ -1,0 +1,40 @@
+<section class="acm-panel acm-settings-panel">
+  <p class="acm-intro">Create currencies that appear directly in D&amp;D 5e actor sheets. Values are measured in gold pieces (GP). For example, a coin worth 5 GP has <strong>Value = 5</strong>.</p>
+  <div class="acm-table-wrap">
+    <table class="acm-table">
+      <thead>
+        <tr>
+          <th class="acm-id-col">ID</th>
+          <th>Name</th>
+          <th class="acm-abr-col">Abbr.</th>
+          <th class="acm-value-col">Value (GP)</th>
+          <th>Image path / icon</th>
+          <th class="acm-button-col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each currencies}}
+        <tr class="acm-settings-row" data-currency-id="{{id}}">
+          <td><input data-field="id" type="text" value="{{id}}" title="Stable unique key (e.g. suncoin)" spellcheck="false"></td>
+          <td><input data-field="name" type="text" value="{{name}}" maxlength="60" aria-label="Currency name"></td>
+          <td><input data-field="abbreviation" type="text" value="{{abbreviation}}" maxlength="12" aria-label="Abbreviation"></td>
+          <td><input data-field="valueGP" type="number" min="0.000000001" step="any" value="{{valueGP}}" aria-label="Value in GP"></td>
+          <td class="acm-icon-col"><div class="acm-icon-input"><img src="{{icon}}" alt="" width="24" height="24"><input data-field="icon" type="text" value="{{icon}}" placeholder="icons/coin.webp" aria-label="Icon path"><button type="button" class="icon" data-action="chooseIcon" title="Browse images"><i class="fa-solid fa-folder-open"></i></button></div></td>
+          <td><button type="button" class="icon" data-action="remove" title="Remove currency"><i class="fa-solid fa-trash"></i></button></td>
+        </tr>
+        {{else}}
+        <tr><td colspan="6" class="acm-empty">No custom currencies yet. Click <strong>Add Currency</strong>.</td></tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  <div class="acm-toolbar">
+    <button type="button" data-action="add"><i class="fa-solid fa-plus"></i> Add Currency</button>
+    <span class="acm-muted">Maximum: {{limit}} custom currencies</span>
+  </div>
+  <p class="acm-caution"><i class="fa-solid fa-circle-info"></i> Existing GP / SP / CP / EP / PP are never replaced. Changing currency values affects the meaning of existing wealth. Deleting is blocked if an actor or item still holds that currency; always back up your World first.</p>
+  <footer class="acm-toolbar acm-footer">
+    <button type="button" data-action="reset"><i class="fa-solid fa-rotate-left"></i> Discard Changes</button>
+    <button type="button" data-action="save"><i class="fa-solid fa-floppy-disk"></i> Save Currencies</button>
+  </footer>
+</section>
