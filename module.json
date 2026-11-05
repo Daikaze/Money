@@ -2,7 +2,7 @@
   "id": "averis-currency-manager",
   "title": "Averis Currency Manager",
   "description": "GM-defined currencies integrated into D&D 5e's native actor wallets, with icons, exchange rates and transfers. Built for Foundry VTT v14.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "authors": [
     {
       "name": "Tabletop Atlas / Averis"
@@ -41,5 +41,8 @@
       "name": "Български",
       "path": "lang/bg.json"
     }
-  ]
+  ],
+  "url": "https://github.com/Daikaze/Money",
+  "manifest": "https://raw.githubusercontent.com/Daikaze/Money/main/module.json",
+  "download": "https://raw.githubusercontent.com/Daikaze/Money/main/dist/averis-currency-manager-v0.1.1.zip"
 }
